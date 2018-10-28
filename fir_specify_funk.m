@@ -52,7 +52,8 @@ end % end i b.runs
 
 
 %% get condition files from saved .mat
-cond_dir = '/Users/wbr/walter/fmri/sms_scan_analyses/rsa_singletrial/fir_cond_files';
+% cond_dir = '/Users/wbr/walter/fmri/sms_scan_analyses/rsa_singletrial/fir_cond_files';
+cond_dir   = '/home/wbreilly/sms_scan_crick/cluster_fir_data_10_27_18/fir_cond_files/';
 
 for i = 1:length(b.runs)
     b.rundir(i).cond = cellstr(spm_select('FPList', cond_dir, [ 'fir_condfile_' b.curSubj sprintf('_%s.mat', b.runs{i})]));
