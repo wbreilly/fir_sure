@@ -53,11 +53,11 @@ fprintf('Running batch lss')
 
 % pool party
 pc = parcluster('big_mem'); % or 'single_nose'
-poolobj = parpool(pc, 34);
+poolobj = parpool(pc, 2);
 
 %--Loop over subjects
-parfor i = 1:length(subjects)
-    try
+parfor i = 1:2 %length(subjects)
+%     try
         % Define variables for individual subjects - General
         b.curSubj   = subjects{i};
         b.runs      = runs;
@@ -84,10 +84,10 @@ parfor i = 1:length(subjects)
         fprintf('------------------------------------------------------------\n')
         fprintf('\n')
 
-    catch ME
-        disp(['ID: ' ME.identifier])
-        warning('bad shit happened for %s', subjects{i})
-    end % end catch
+%     catch ME
+%         disp(['ID: ' ME.identifier])
+%         warning('bad shit happened for %s', subjects{i})
+%     end % end catch
     diary off
 end % i (subjects)
 
