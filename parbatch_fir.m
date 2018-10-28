@@ -56,7 +56,7 @@ pc = parcluster('big_mem'); % or 'single_nose'
 poolobj = parpool(pc, 34);
 
 %--Loop over subjects
-for i = 1:length(subjects)
+parfor i = 1:length(subjects)
     try
         % Define variables for individual subjects - General
         b.curSubj   = subjects{i};
@@ -66,7 +66,6 @@ for i = 1:length(subjects)
         % Define variables for individual subjects - QA General
         b.scriptdir   = scriptdir;
         b.auto_accept = auto_accept;
-        b.messages    = sprintf('Messages for subject %s:\n', subjects{i});
 
         % Check whether first level has already been run for a subject
 
