@@ -53,7 +53,7 @@ fprintf('Running batch lss')
 
 % pool party
 pc = parcluster('big_mem'); % or 'single_nose'
-poolobj = parpool(pc, 2);
+poolobj = parpool(pc, 34);
 
 %--Loop over subjects
 parfor i = 1:length(subjects)
