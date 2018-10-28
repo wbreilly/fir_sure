@@ -14,15 +14,17 @@
 % scriptdir = path to directory housing this script (and auxiliary scripts)
 % QAdir     = Name of output QA directory
 
-dataDir     = '/Users/wbr/walter/fmri/sms_scan_analyses/data_for_spm/fir_data_10_26_18/';
-scriptdir   = '/Users/wbr/walter/fmri/sms_scan_analyses/rsa_singletrial/fir_sure'; 
+% dataDir     = '/Users/wbr/walter/fmri/sms_scan_analyses/data_for_spm/fir_data_10_26_18/';
+% scriptdir   = '/Users/wbr/walter/fmri/sms_scan_analyses/rsa_singletrial/fir_sure'; 
+dataDir       = '/home/wbreilly/sms_scan_crick/cluster_fir_data_10_27_18/';
+scriptDir     = '/home/wbreilly/sms_scan_crick/cluster_fir_data_10_27_18/fir_sure';
 
 % add spm to path
 % this version hasn't been compiled yet
 % addpath /home/wbreilly/matlab_toolboxes/spm12/
 % this is a version jordan compiled. He edited something to do with
 % implicit masking and a .mat default save format
-% addpath /group/dml/apps/spm12
+addpath /group/dml/apps/spm12
 
 
 subjects    = {'s001' 's002' 's003' 's004' 's007' 's008' 's009' 's010' 's011' 's015' 's016' 's018' 's019'  's020'...
@@ -50,12 +52,12 @@ end
 fprintf('Running batch lss')
 
 % pool party
-% pc = parcluster('big_mem'); % or 'single_nose'
-% poolobj = parpool(pc, 34);
+pc = parcluster('big_mem'); % or 'single_nose'
+poolobj = parpool(pc, 34);
 
 %--Loop over subjects
-for i = 1 %:length(subjects)
-%     try
+for i = 1:length(subjects)
+    try
         % Define variables for individual subjects - General
         b.curSubj   = subjects{i};
         b.runs      = runs;
@@ -83,15 +85,15 @@ for i = 1 %:length(subjects)
         fprintf('------------------------------------------------------------\n')
         fprintf('\n')
 
-%     catch ME
-%         disp(['ID: ' ME.identifier])
-%         warning('bad shit happened for %s', subjects{i})
-%     end % end catch
+    catch ME
+        disp(['ID: ' ME.identifier])
+        warning('bad shit happened for %s', subjects{i})
+    end % end catch
     diary off
 end % i (subjects)
 
 fprintf('FIR FTW!!\n')
 
 
-% delete(gcp('nocreate'))
-% exit
+delete(gcp('nocreate'))
+exit
