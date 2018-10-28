@@ -17,7 +17,7 @@
 % dataDir     = '/Users/wbr/walter/fmri/sms_scan_analyses/data_for_spm/fir_data_10_26_18/';
 % scriptdir   = '/Users/wbr/walter/fmri/sms_scan_analyses/rsa_singletrial/fir_sure'; 
 dataDir       = '/home/wbreilly/sms_scan_crick/cluster_fir_data_10_27_18/';
-scriptDir     = '/home/wbreilly/sms_scan_crick/cluster_fir_data_10_27_18/fir_sure';
+scriptdir     = '/home/wbreilly/sms_scan_crick/cluster_fir_data_10_27_18/fir_sure';
 
 % add spm to path
 % this version hasn't been compiled yet
@@ -56,7 +56,7 @@ pc = parcluster('big_mem'); % or 'single_nose'
 poolobj = parpool(pc, 2);
 
 %--Loop over subjects
-parfor i = 1:2 %length(subjects)
+parfor i = 1:length(subjects)
 %     try
         % Define variables for individual subjects - General
         b.curSubj   = subjects{i};

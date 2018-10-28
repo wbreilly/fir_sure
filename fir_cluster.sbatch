@@ -4,7 +4,7 @@
 #SBATCH --output=/home/wbreilly/sms_scan_crick/cluster_fir_data_10_27_18/logs/fir_10_27_18.%j.%N.out
 #SBATCH --error=/home/wbreilly/sms_scan_crick/cluster_fir_data_10_27_18/logs/fir_10_27_18.%j.%N.err
 #SBATCH --nodes=1
-#SBATCH -c 2
+#SBATCH -c 34
 #SBATCH -p bigmemm
 #SBATCH --time=5-00:00:00
 #SBATCH --mem-per-cpu=3000 # 3gb % spm max mem set at 2.1gb
