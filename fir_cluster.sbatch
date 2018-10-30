@@ -1,8 +1,8 @@
 #!/bin/bash -l 
 #
-#SBATCH --job-name=fir_10_27_18
-#SBATCH --output=/home/wbreilly/sms_scan_crick/cluster_fir_data_10_27_18/logs/fir_10_27_18.%j.%N.out
-#SBATCH --error=/home/wbreilly/sms_scan_crick/cluster_fir_data_10_27_18/logs/fir_10_27_18.%j.%N.err
+#SBATCH --job-name=fir_10_30_18
+#SBATCH --output=/home/wbreilly/sms_scan_crick/cluster_fir_data_10_27_18/logs/fir_10_30_18.%j.%N.out
+#SBATCH --error=/home/wbreilly/sms_scan_crick/cluster_fir_data_10_27_18/logs/fir_10_30_18.%j.%N.err
 #SBATCH --nodes=1
 #SBATCH -c 34
 #SBATCH -p bigmemm
