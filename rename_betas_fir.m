@@ -8,7 +8,7 @@ clear all
 clc
 
 
-dataDir     = '/Users/wbr/walter/fmri/sms_scan_analyses/data_for_spm/fir_data_10_26_18/';
+dataDir     = '/Users/wbr/walter/fmri/sms_scan_analyses/data_for_spm/fir_data_10_30_18/';
 scriptdir   = '/Users/wbr/walter/fmri/sms_scan_analyses/rsa_singletrial/fir_sure'; 
 
 
@@ -51,7 +51,7 @@ last_beta_idx  = [32:32:160;...
 
 
 tic
-parfor isub = 8:length(subjects) 
+parfor isub = 1:length(subjects) 
     
     b.curSubj   = subjects{isub};
     b.dataDir   = fullfile(dataDir, b.curSubj, 'fir_spm');
